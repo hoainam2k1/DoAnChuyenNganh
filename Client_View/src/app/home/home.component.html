@@ -1,0 +1,16 @@
+<div class="container" >
+
+        <div class="row" style="padding: 20px;">
+            <div class="col col-md-3" *ngFor="let pd of list | async" style="margin-bottom: 10px">
+                <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Name: {{pd.productName}}</h5>
+                      <p class="card-text">Price: {{pd.unitPrice}}</p>
+                      <a class="btn btn-primary" (click)="addToCart(pd.productId)">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+

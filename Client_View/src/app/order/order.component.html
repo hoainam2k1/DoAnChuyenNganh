@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Order Date</th>
+                        <th>Ship Date</th>
+                        <th>Ship Address</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pd of list | async">
+                        <td>{{pd.orderId}}</td>
+                        <td>{{pd.orderDate}}</td>
+                        <td>{{pd.shippedDate}}</td>
+                        <td>{{pd.shipAddress}}</td>
+                        <td>
+                            <a (click)="detail(pd.orderId)">View</a>
+                        </td>
+                    </tr> 
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

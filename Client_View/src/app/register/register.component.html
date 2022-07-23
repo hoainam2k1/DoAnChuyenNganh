@@ -1,0 +1,92 @@
+<div class="container">
+    <form autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Username</label>
+                <input class="form-control form-control-lg" name="customerId"
+                    #customerId="ngModel" [(ngModel)]="service.formData.customerId"
+                    required maxlength="5" [class.invalid]="customerId.invalid && customerId.touched">
+            </div>
+            <div class="form-group col-md-6">
+                <label>PassWord</label>
+                <input type="password" class="form-control form-control-lg" name="passWord"
+                    #passWord="ngModel" [(ngModel)]="service.formData.passWord"
+                    required maxlength="50" [class.invalid]="passWord.invalid && passWord.touched">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Company Name</label>
+                <input class="form-control form-control-lg" name="companyName"
+                    #companyName="ngModel" [(ngModel)]="service.formData.companyName"
+                    required maxlength="40" [class.invalid]="companyName.invalid && companyName.touched">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Contact Name</label>
+                <input class="form-control form-control-lg" name="contactName"
+                    #contactName="ngModel" [(ngModel)]="service.formData.contactName"
+                    required maxlength="30" [class.invalid]="contactName.invalid && contactName.touched">
+            </div>       
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Contact Title</label>
+                <input class="form-control form-control-lg" name="contactTitle"
+                    #contactTitle="ngModel" [(ngModel)]="service.formData.contactTitle"
+                    required maxlength="30" [class.invalid]="contactTitle.invalid && contactTitle.touched">
+            </div>
+            <div class="form-group col-md-6">
+                <label>region</label>
+                <input class="form-control form-control-lg" name="region"
+                    #region="ngModel" [(ngModel)]="service.formData.region"
+                    required maxlength="15" [class.invalid]="region.invalid && region.touched">
+            </div>       
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>address</label>
+                <input class="form-control form-control-lg" name="address"
+                    #address="ngModel" [(ngModel)]="service.formData.address"
+                    required maxlength="15" [class.invalid]="address.invalid && address.touched">
+            </div>
+            <div class="form-group col-md-6">
+                <label>city</label>
+                <input class="form-control form-control-lg" name="city"
+                    #city="ngModel" [(ngModel)]="service.formData.city"
+                    required maxlength="15" [class.invalid]="city.invalid && city.touched">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Postal Code</label>
+                <input class="form-control form-control-lg" name="postalCode"
+                    #postalCode="ngModel" [(ngModel)]="service.formData.postalCode"
+                    required maxlength="10" [class.invalid]="postalCode.invalid && postalCode.touched">
+            </div>
+            <div class="form-group col-md-6">
+                <label>phone</label>
+                <input class="form-control form-control-lg" name="phone"
+                    #phone="ngModel" [(ngModel)]="service.formData.phone"
+                    required maxlength="24" [class.invalid]="phone.invalid && phone.touched">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>fax</label>
+                <input class="form-control form-control-lg" name="fax"
+                    #fax="ngModel" [(ngModel)]="service.formData.fax"
+                    required maxlength="24" [class.invalid]="fax.invalid && fax.touched">
+            </div>
+            <div class="form-group col-md-6">
+                <label>country</label>
+                <input class="form-control form-control-lg" name="country"
+                    #country="ngModel" [(ngModel)]="service.formData.country"
+                    required maxlength="15" [class.invalid]="country.invalid && country.touched">
+            </div>
+        </div>
+        
+        <br/>
+        <div class="form-group">
+            <button class="btn btn-info btn-lg btn-block" type="submit">Register</button>
+        </div>
+    </form>
+    
+</div>

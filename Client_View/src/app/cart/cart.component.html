@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>Product Name</th>
+                    <th>Unit Price</th>
+                    <th>Quantity</th>
+                    <th></th>
+                </tr>   
+            </thead>
+            <tbody id="table-body">
+                <tr *ngFor="let pd of OrderDetail">
+                    <td>{{pd.productName}}</td>
+                    <td>{{pd.unitPrice}}</td>
+                    <td>{{pd.quantity}}</td>
+                    <td>
+                        <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.productId)"></i>
+                    </td>
+                </tr> 
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <form autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+            <input type="hidden" name="customerId" [value]="service.formData.customerId">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>ship Address</label>
+                    <input class="form-control form-control-lg" name="shipAddress"
+                        #shipAddress="ngModel" [(ngModel)]="service.formData.shipAddress"
+                        required [class.invalid]="shipAddress.invalid && shipAddress.touched">
+                </div>     
+            </div>
+            <div class="form-group col-2">
+                <button class="btn btn-info btn-lg btn-block" type="submit">Order</button>
+            </div>
+        </form>
+    </div>
+</div>
