@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col col-md-4"></div>
+        <div class="col col-md-4">
+            <form autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+            
+                <div class="form-group">
+                    <label>User Name</label>
+                    <input class="form-control form-control-lg" name="customerId"
+                        #customerId="ngModel" [(ngModel)]="service.formData.customerId"
+                        required [class.invalid]="customerId.invalid && customerId.touched">
+                </div>
+            
+            
+                <div class="form-group">
+                    <label>PassWord</label>
+                    <input class="form-control form-control-lg" name="passWord"
+                        #passWord="ngModel" [(ngModel)]="service.formData.passWord"
+                        required [class.invalid]="passWord.invalid && passWord.touched">
+                </div>       
+            
+            
+                <div class="form-group">
+                    <button class="btn btn-info btn-lg btn-block" type="submit">SUBMIT</button>
+                </div>
+            </form>
+        </div>
+    
+        <div class="col col-md-4"></div>
+    </div>
+    <div class="row">
+        <div class="col col-md-4"></div>
+        <div class="col col-md-4">
+            <span>Not a member? <a mat-button routerLink="register"><strong>Register</strong></a></span>
+        </div>
+        <div class="col col-md-4"></div>        
+    </div>
+</div>
+
+

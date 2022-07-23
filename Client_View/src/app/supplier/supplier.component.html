@@ -1,0 +1,42 @@
+<div class="container">
+    <app-supplier-add></app-supplier-add>
+</div>
+
+<div class="row">
+    <div class="col">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>Company Name</th>
+                    <th>Contact Name</th>
+                    <th>Contact Title</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Region</th>
+                    <th>Postal Code</th>
+                    <th>Country</th>
+                    <th>Phone</th>
+                    <th>Fax</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pd of list | async">
+                    <td (click)="populateForm(pd)">{{pd.companyName}}</td>
+                    <td (click)="populateForm(pd)">{{pd.contactName}}</td>
+                    <td (click)="populateForm(pd)">{{pd.contactTitle}}</td>
+                    <td (click)="populateForm(pd)">{{pd.address}}</td>
+                    <td (click)="populateForm(pd)">{{pd.city}}</td>
+                    <td (click)="populateForm(pd)">{{pd.region}}</td>
+                    <td (click)="populateForm(pd)">{{pd.postalCode}}</td>
+                    <td (click)="populateForm(pd)">{{pd.country}}</td>
+                    <td (click)="populateForm(pd)">{{pd.phone}}</td>
+                    <td (click)="populateForm(pd)">{{pd.fax}}</td>
+                    <td>
+                        <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.supplierId)"></i>
+                    </td>
+                </tr> 
+            </tbody>
+        </table>
+    </div>
+</div>

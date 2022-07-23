@@ -1,0 +1,64 @@
+<form autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="productId" [value]="service.formData.productId">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Product Name</label>
+            <input class="form-control form-control-lg" name="productName"
+                #productName="ngModel" [(ngModel)]="service.formData.productName"
+                required [class.invalid]="productName.invalid && productName.touched">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Supplier ID</label>
+            <input class="form-control form-control-lg" name="supplierId"
+                #supplierId="ngModel" [(ngModel)]="service.formData.supplierId"
+                required [class.invalid]="supplierId.invalid && supplierId.touched">
+        </div>       
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Category ID</label>
+            <input class="form-control form-control-lg" name="categoryId"
+                #categoryId="ngModel" [(ngModel)]="service.formData.categoryId"
+                required [class.invalid]="categoryId.invalid && categoryId.touched">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Quantity Per Unit</label>
+            <input class="form-control form-control-lg" name="quantityPerUnit"
+                #quantityPerUnit="ngModel" [(ngModel)]="service.formData.quantityPerUnit"
+                required [class.invalid]="quantityPerUnit.invalid && quantityPerUnit.touched">
+        </div>       
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Unit Price</label>
+            <input class="form-control form-control-lg" name="unitPrice"
+                #unitPrice="ngModel" [(ngModel)]="service.formData.unitPrice"
+                required [class.invalid]="unitPrice.invalid && unitPrice.touched">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Unit In Stock</label>
+            <input class="form-control form-control-lg" name="unitsInStock"
+                #unitsInStock="ngModel" [(ngModel)]="service.formData.unitsInStock"
+                required [class.invalid]="unitsInStock.invalid && unitsInStock.touched">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Units On Order</label>
+            <input class="form-control form-control-lg" name="unitsOnOrder"
+                #unitsOnOrder="ngModel" [(ngModel)]="service.formData.unitsOnOrder"
+                required [class.invalid]="unitsOnOrder.invalid && unitsOnOrder.touched">
+        </div>
+        <div class="form-group col-md-6">
+            <label>ReOrder Level</label>
+            <input class="form-control form-control-lg" name="reorderLevel"
+                #reorderLevel="ngModel" [(ngModel)]="service.formData.reorderLevel"
+                required [class.invalid]="reorderLevel.invalid && reorderLevel.touched">
+        </div>
+    </div>
+    
+    
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" type="submit">SUBMIT</button>
+    </div>
+</form>

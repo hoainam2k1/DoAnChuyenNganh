@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3 class="font-weight-bold">Order Detail</h3>
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Unit Price</th>
+                        <th>Quantity</th>
+                        <th>Discount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pd of listOrder | async">
+                        <td>{{pd.productId}}</td>
+                        <td>{{pd.unitPrice}}</td>
+                        <td>{{pd.quantity}}</td>    
+                        <td>{{pd.discount}}</td>
+                    </tr> 
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

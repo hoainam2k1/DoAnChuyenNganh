@@ -1,0 +1,38 @@
+<div class="container">
+    <app-product-add></app-product-add>
+</div>
+
+<div class="row">
+    <div class="col">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>Product Name</th>
+                    <th>SupplierID</th>
+                    <th>CategoryID</th>
+                    <th>QuantityPerUnit</th>
+                    <th>UnitPrice</th>
+                    <th>UnitsInStock</th>
+                    <th>UnitsOnOrder</th>
+                    <th>ReorderLevel</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pd of list | async">
+                    <td (click)="populateForm(pd)">{{pd.productName}}</td>
+                    <td (click)="populateForm(pd)">{{pd.supplierId}}</td>
+                    <td (click)="populateForm(pd)">{{pd.categoryId}}</td>
+                    <td (click)="populateForm(pd)">{{pd.quantityPerUnit}}</td>
+                    <td (click)="populateForm(pd)">{{pd.unitPrice}}</td>
+                    <td (click)="populateForm(pd)">{{pd.unitsInStock}}</td>
+                    <td (click)="populateForm(pd)">{{pd.unitsOnOrder}}</td>
+                    <td (click)="populateForm(pd)">{{pd.reorderLevel}}</td>
+                    <td>
+                        <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.productId)"></i>
+                    </td>
+                </tr> 
+            </tbody>
+        </table>
+    </div>
+</div>
